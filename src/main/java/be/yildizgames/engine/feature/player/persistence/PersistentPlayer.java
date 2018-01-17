@@ -24,9 +24,9 @@
 
 package be.yildizgames.engine.feature.player.persistence;
 
-import be.yildiz.common.collections.Sets;
-import be.yildiz.common.id.PlayerId;
 import be.yildiz.module.database.data.PersistentData;
+import be.yildizgames.common.collection.Sets;
+import be.yildizgames.common.model.PlayerId;
 import be.yildizgames.engine.feature.player.Player;
 import be.yildizgames.engine.feature.player.PlayerManager;
 import be.yildizgames.engine.feature.player.PlayerRight;
@@ -46,7 +46,7 @@ import java.util.Set;
  *
  * @author Grégory Van den Borre
  */
-public final class PersistentPlayer implements PersistentData<PlayerToCreate, Player> {
+public final class PersistentPlayer implements PersistentData<PlayerToCreate, Player, Player> {
 
     /**
      * Persistent unit name where data must be retrieved.
