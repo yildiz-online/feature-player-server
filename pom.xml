@@ -43,9 +43,13 @@
   </scm>
   <parent>
     <groupId>be.yildiz-games</groupId>
-    <artifactId>parent</artifactId>
-    <version>2.0.3</version>
+    <artifactId>parent-feature-server</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
+
+  <properties>
+    <feature.package>player</feature.package>
+  </properties>
 
   <dependencies>
     <dependency>
@@ -56,84 +60,9 @@
     <dependency>
       <groupId>be.yildiz-games</groupId>
       <artifactId>module-database</artifactId>
-      <version>1.2.2-SNAPSHOT</version>
+      <version>2.0.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
-  <profiles>
-    <profile>
-      <id>generate-from-memory</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-maven-plugin</artifactId>
-            <version>3.5.3</version>
-            <configuration>
-              <changeLogFile>
-                ${basedir}/src/main/resources/database-memory-update-script.xml
-              </changeLogFile>
-              <driver>org.h2.Driver</driver>
-              <url>jdbc:h2:${basedir}/target/database/LIQUIBASE;</url>
-              <username>sa</username>
-            </configuration>
-            <executions>
-              <execution>
-                <phase>process-resources</phase>
-                <goals>
-                  <goal>update</goal>
-                </goals>
-              </execution>
-            </executions>
-            <dependencies>
-              <dependency>
-                <groupId>com.h2database</groupId>
-                <artifactId>h2</artifactId>
-                <version>1.4.196</version>
-              </dependency>
-            </dependencies>
-          </plugin>
-          <plugin>
-            <groupId>org.jooq</groupId>
-            <artifactId>jooq-codegen-maven</artifactId>
-            <executions>
-              <execution>
-                <phase>process-resources</phase>
-                <goals>
-                  <goal>generate</goal>
-                </goals>
-              </execution>
-            </executions>
-            <dependencies>
-              <dependency>
-                <groupId>com.h2database</groupId>
-                <artifactId>h2</artifactId>
-                <version>1.4.196</version>
-              </dependency>
-            </dependencies>
-            <configuration>
-              <jdbc>
-                <driver>org.h2.Driver</driver>
-                <url>jdbc:h2:${basedir}/target/database/LIQUIBASE;</url>
-                <user>sa</user>
-              </jdbc>
-              <generator>
-                <name>org.jooq.util.JavaGenerator</name>
-                <database>
-                  <name>org.jooq.util.h2.H2Database</name>
-                  <includes>.*</includes>
-                  <excludes>DATABASECHANGELOGLOCK | DATABASECHANGELOG</excludes>
-                  <inputSchema>PUBLIC</inputSchema>
-                </database>
-                <target>
-                  <packageName>be.yildizgames.engine.feature.player.generated.database</packageName>
-                  <directory>src/main/java</directory>
-                </target>
-              </generator>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
+
 </project>
