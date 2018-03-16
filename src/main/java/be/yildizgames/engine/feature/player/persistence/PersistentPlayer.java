@@ -24,8 +24,6 @@
 
 package be.yildizgames.engine.feature.player.persistence;
 
-import be.yildiz.module.database.data.PersistentData;
-import be.yildizgames.common.collection.Sets;
 import be.yildizgames.common.model.PlayerId;
 import be.yildizgames.engine.feature.player.Player;
 import be.yildizgames.engine.feature.player.PlayerManager;
@@ -33,11 +31,13 @@ import be.yildizgames.engine.feature.player.PlayerRight;
 import be.yildizgames.engine.feature.player.PlayerToCreate;
 import be.yildizgames.engine.feature.player.generated.database.tables.Players;
 import be.yildizgames.engine.feature.player.generated.database.tables.records.PlayersRecord;
+import be.yildizgames.module.database.data.PersistentData;
 import org.jooq.DSLContext;
 import org.jooq.conf.Settings;
 import org.jooq.impl.DSL;
 
 import java.sql.Connection;
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
@@ -71,7 +71,7 @@ public final class PersistentPlayer implements PersistentData<PlayerToCreate, Pl
      */
     public PersistentPlayer(final Connection c, final PlayerManager playerManager) {
         super();
-        this.freeId = Sets.newSet();
+        this.freeId = new HashSet<>();
         this.playerManager = playerManager;
         try (DSLContext create = this.getDSL(c)) {
             Optional.ofNullable(create.selectFrom(table).fetch())
