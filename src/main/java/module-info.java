@@ -23,10 +23,13 @@
  */
 
 module be.yildizgames.feature.player.server {
+
+    requires java.annotation;
+
     requires be.yildizgames.feature.player.shared;
     requires be.yildizgames.module.database;
     requires be.yildizgames.common.model;
-    requires java.xml.ws.annotation;
+
     requires org.jooq;
     requires java.sql;
 
