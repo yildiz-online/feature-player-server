@@ -32,7 +32,6 @@ import be.yildizgames.engine.feature.player.generated.database.tables.Players;
 
 import javax.annotation.Generated;
 
-
 /**
  * Convenience access to all tables in PUBLIC
  */

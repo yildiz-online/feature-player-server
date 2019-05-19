@@ -128,7 +128,7 @@ public final class PersistentPlayer implements PersistentData<PlayerToCreate, Pl
     }
 
     @Override
-    public void update(Player data, Connection c) {
+    public final void update(Player data, Connection c) {
         // TODO Auto-generated method stub
 
     }
