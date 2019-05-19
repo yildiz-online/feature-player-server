@@ -27,7 +27,6 @@
 */
 package be.yildizgames.engine.feature.player.generated.database;
 
-
 import org.jooq.Schema;
 import org.jooq.impl.CatalogImpl;
 
