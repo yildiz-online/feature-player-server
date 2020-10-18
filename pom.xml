@@ -27,7 +27,7 @@
   <modelVersion>4.0.0</modelVersion>
   <name>Yildiz Feature Player Server</name>
   <description>Contains the server code to use players.</description>
-  <url>https://bitbucket.org/yildiz-engine-team/feature-player-server</url>
+  <url>https://github.com/yildiz-online/feature-player-server</url>
 
   <artifactId>feature-player-server</artifactId>
   <version>1.0.2-SNAPSHOT</version>
@@ -35,9 +35,9 @@
   <packaging>jar</packaging>
   <inceptionYear>2017</inceptionYear>
   <scm>
-    <connection>scm:git:https://bitbucket.org/yildiz-engine-team/feature-player-server</connection>
-    <developerConnection>scm:git:https://bitbucket.org/yildiz-engine-team/feature-player-server</developerConnection>
-    <url>https://bitbucket.org/yildiz-engine-team/feature-player-server</url>
+    <connection>scm:git:https://github.com/yildiz-online/feature-player-server</connection>
+    <developerConnection>scm:git:https://github.com/yildiz-online/feature-player-server</developerConnection>
+    <url>https://github.com/yildiz-online/feature-player-server</url>
   </scm>
   <parent>
     <groupId>be.yildiz-games</groupId>
